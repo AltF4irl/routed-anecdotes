@@ -64,8 +64,8 @@ const App = () => {
   return (
     <div>
       <h1>Software anecdotes</h1>
-      <Menu anecdotes={anecdotes}  anecdote={anecdote} addNew={addNew} />
       {notification && notificationBlock(notification)}
+      <Menu anecdotes={anecdotes}  anecdote={anecdote} addNew={addNew} />
       <Footer />
     </div>
   )
