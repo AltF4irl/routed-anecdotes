@@ -6,7 +6,9 @@ const CreateNew = (props) => {
     const info = useField('text')
     const content = useField('text')
 
-    // const authorv2 = 
+    const authorv2 = (({reset, ...rest}) => rest) (author)
+    const infov2 = (({reset, ...rest}) => rest) (info)
+    const contentv2 = (({reset, ...rest}) => rest) (content)
   
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -30,15 +32,15 @@ const CreateNew = (props) => {
         <form onSubmit={handleSubmit}>
           <div>
             content
-            <input name='content' {...content} />
+            <input name='content' {...contentv2} />
           </div>
           <div>
             author
-            <input name='author' {...author} />
+            <input name='author' {...authorv2} />
           </div>
           <div>
             url for more info
-            <input name='info' {...info} />
+            <input name='info' {...infov2} />
           </div>
           <button>create</button>
           <button type="button" onClick={onReset} >Reset</button>
