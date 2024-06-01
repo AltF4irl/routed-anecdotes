@@ -5,6 +5,8 @@ const CreateNew = (props) => {
     const author = useField('text')
     const info = useField('text')
     const content = useField('text')
+
+    // const authorv2 = 
   
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -14,6 +16,12 @@ const CreateNew = (props) => {
         info: info.value,
         votes: 0
       })
+    }
+
+    const onReset = () => {
+      author.reset()
+      info.reset()
+      content.reset()
     }
   
     return (
@@ -33,6 +41,7 @@ const CreateNew = (props) => {
             <input name='info' {...info} />
           </div>
           <button>create</button>
+          <button type="button" onClick={onReset} >Reset</button>
         </form>
       </div>
     )
